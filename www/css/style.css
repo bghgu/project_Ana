@@ -1,0 +1,31 @@
+/* Empty. Add your own CSS if you like */
+
+#tour-view .slider {
+  height: 100%;
+}
+#tour-view .slider-slide {
+  padding-top: 100px;
+  text-align: center;
+}
+#tour-view .icon-slide {
+  font-size: 20em;
+  display: inline-block;
+}
+
+#logo .app-logo {
+    max-width:120px;
+    margin:auto;
+    background-repeat:no-repeat;
+    background-position:center; }
+
+.loginBg {
+    background: url(../img/1.jpg);
+    /*background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 80%;
+    height: 246px;
+    margin: auto;
+    z-index: 2;
+    position: relative;*/
+}

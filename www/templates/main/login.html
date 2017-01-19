@@ -1,0 +1,21 @@
+<ion-view view-title="로그인" class="loginBg" hide-nav-bar="true">
+  <!-- <ion-nav-title><img src="img/logo.png" width="40"></ion-nav-title> -->
+
+  <ion-content class="padding">
+
+    <div class="row responsive-sm padding remvoeBP">
+      <div class="col">
+
+        <h1 class="light" style="text-align:center" style="FONT-WEIGHT: bold;"> 함께 맞는 비 </h1>
+
+        <div class="list list-inset removePM">
+          <label class="item item-input"><i class="ion-ios-person placeholder-icon"></i><input type="tel" ng-model="user.username" placeholder="휴대폰번호" > </label>
+          <label class="item item-input"><i class="ion-ios-locked placeholder-icon"></i><input type="password" ng-model="user.password" placeholder="비밀번호" > </label>
+        </div>
+
+        <div class="loginButton"><button class="button button-block button-energized" ng-click="login(user);" > 로그인 </button> </div>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

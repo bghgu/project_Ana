@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic', 'starter.login'])
+angular.module('starter', ['ionic', 'starter.login', 'starter.services'])
 
   .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -34,8 +34,7 @@ angular.module('starter', ['ionic', 'starter.login'])
 
       .state('main', {
         url: '/main',
-        templateUrl: 'templates/main/main.html',
-        //controller: 'mainCtrl'
+        templateUrl: 'templates/main/main.html'
       })
 
       .state('login', {
@@ -44,23 +43,75 @@ angular.module('starter', ['ionic', 'starter.login'])
         controller: 'loginCtrl'
       })
 
-      .state('home', {
-        url: '/home',
-        templateUrl: 'templates/home/home.html',
-        //controller: 'mainCtrl'
-      })
-
-      /*templateUrl: 'templates/main/login.html',
-      controller: 'loginCtrl'
-      .state('myPage', {
+      .state('app.home', {
         url: '/home',
         views: {
           'menuContent': {
-            templateUrl: 'templates/home/home.html',
-            //controller: 'loginCtrl'
+            templateUrl: 'templates/page/home.html',
+            //Controller: 'homeCtrl'
           }
         }
-      })*/
+      })
+
+      .state('app.introduce', {
+        url: '/introduce',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/introduce.html',
+            //Controller: 'introduceCtrl'
+          }
+        }
+      })
+
+      .state('app.greeting', {
+        url: '/greeting',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/greeting.html',
+            //Controller: 'greetingCtrl'
+          }
+        }
+      })
+
+      .state('app.cardinalList', {
+        url: '/cardinalList',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/cardinalList.html',
+            //Controller: 'cardinalListCtrl'
+          }
+        }
+      })
+
+      .state('app.rule', {
+        url: '/rule',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/rule.html',
+            //Controller: 'ruleCtrl'
+          }
+        }
+      })
+
+      .state('app.notice', {
+        url: '/notice',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/notice.html',
+            //Controller: 'noticesCtrl'
+          }
+        }
+      })
+
+      .state('app.board', {
+        url: '/board',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/board.html',
+            //Controller: 'boardCtrl'
+          }
+        }
+      })
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/main');

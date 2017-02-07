@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic', 'starter.login', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.services'])
 
   .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -48,7 +48,17 @@ angular.module('starter', ['ionic', 'starter.login', 'starter.services'])
         views: {
           'menuContent': {
             templateUrl: 'templates/page/home.html',
-            //Controller: 'homeCtrl'
+            //controller: 'homeCtrl'
+          }
+        }
+      })
+
+      .state('app.myPage', {
+        url: '/myPage',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/myPage.html',
+            controller: 'userCtrl'
           }
         }
       })
@@ -58,17 +68,27 @@ angular.module('starter', ['ionic', 'starter.login', 'starter.services'])
         views: {
           'menuContent': {
             templateUrl: 'templates/page/introduce.html',
-            //Controller: 'introduceCtrl'
+            //controller: 'introduceCtrl'
           }
         }
       })
 
-      .state('app.greeting', {
-        url: '/greeting',
+      .state('app.greeting1', {
+        url: '/greeting1',
         views: {
           'menuContent': {
-            templateUrl: 'templates/page/greeting.html',
-            //Controller: 'greetingCtrl'
+            templateUrl: 'templates/page/greeting1.html',
+            //controller: 'greetingCtrl'
+          }
+        }
+      })
+
+      .state('app.greeting2', {
+        url: '/greeting2',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/greeting2.html',
+            //controller: 'greetingCtrl'
           }
         }
       })
@@ -78,7 +98,7 @@ angular.module('starter', ['ionic', 'starter.login', 'starter.services'])
         views: {
           'menuContent': {
             templateUrl: 'templates/page/cardinalList.html',
-            //Controller: 'cardinalListCtrl'
+            controller: 'cardinalListCtrl'
           }
         }
       })
@@ -88,7 +108,7 @@ angular.module('starter', ['ionic', 'starter.login', 'starter.services'])
         views: {
           'menuContent': {
             templateUrl: 'templates/page/rule.html',
-            //Controller: 'ruleCtrl'
+            //controller: 'ruleCtrl'
           }
         }
       })
@@ -98,7 +118,7 @@ angular.module('starter', ['ionic', 'starter.login', 'starter.services'])
         views: {
           'menuContent': {
             templateUrl: 'templates/page/notice.html',
-            //Controller: 'noticesCtrl'
+            //controller: 'noticesCtrl'
           }
         }
       })
@@ -108,7 +128,7 @@ angular.module('starter', ['ionic', 'starter.login', 'starter.services'])
         views: {
           'menuContent': {
             templateUrl: 'templates/page/board.html',
-            //Controller: 'boardCtrl'
+            //controller: 'boardCtrl'
           }
         }
       })

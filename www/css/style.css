@@ -29,6 +29,17 @@
     z-index: 2;
     position: relative;*/
 }
+.introbg {
+    background: url(../img/introbg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    /*width: 80%;
+    height: 246px;
+    margin: auto;
+    z-index: 2;
+    position: relative;*/
+}
 
 /* Explicit Column Percent Sizes */
 /* By default each grid column will evenly distribute */
@@ -150,7 +161,7 @@
   -ms-flex: 0 0 90%;
   flex: 0 0 90%;
   max-width: 90%; }
-  
+
   .spot-tall {
     width: 100%;
     padding-left: 0px;

@@ -1,0 +1,56 @@
+<ion-view view-title="마이 페이지" hide-back-button="true">
+  <ion-content>
+    <div class="list list-inset">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">아이디</span></br>
+        <span class="input-label">{{myPage.id}}</span>
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">이름</span></br>
+        <span class="input-label">{{myPage.name}}</span>
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">기수</span></br>
+        <span class="input-label">{{myPage.th}}학번</span>
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">지위</span></br>
+        <span class="input-label">{{myPage.class}}</span>
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Email</span>
+        <input type="text" placeholder="john@suhr.com">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">생년월일</span>
+        <input type="text" placeholder="{{myPage.birthday}}">
+        <input type="date">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">전화번호</span>
+        <input type="text" ng-model="data.tel" placeholder="{{myPage.tel}}">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Email</span>
+        <input type="text" ng-model="data.email" placeholder="{{myPage.email}}">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">주소</span>
+        <input type="text" ng-model="data.address" placeholder="{{myPage.address}}">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">소속 직장</span>
+        <input type="text" ng-model="data.workPlace" placeholder="{{myPage.workPlace}}">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">직장 지위</span>
+        <input type="text" ng-model="data.workPosition" placeholder="{{myPage.workPosition}}">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">직장 번호</span>
+        <input type="text" ng-model="data.workTel" placeholder="{{myPage.workTel}}">
+      </label>
+      <button class="button button-block button-positive" ng-click="update(data);"> 수정 </button>
+    </div>
+  </ion-content>
+</ion-view>

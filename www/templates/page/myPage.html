@@ -18,13 +18,9 @@
         <span class="input-label">{{myPage.class}}</span>
       </label>
       <label class="item item-input item-stacked-label">
-        <span class="input-label">Email</span>
-        <input type="text" placeholder="john@suhr.com">
-      </label>
-      <label class="item item-input item-stacked-label">
         <span class="input-label">생년월일</span>
         <input type="text" placeholder="{{myPage.birthday}}">
-        <input type="date">
+        <input type="date" ng-model="data.date">
       </label>
       <label class="item item-input item-stacked-label">
         <span class="input-label">전화번호</span>

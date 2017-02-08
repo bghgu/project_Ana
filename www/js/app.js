@@ -93,6 +93,16 @@ angular.module('starter', ['ionic', 'starter.services'])
         }
       })
 
+      .state('app.tel', {
+        url: '/tel',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/tel.html',
+            //controller: 'telCtrl'
+          }
+        }
+      })
+
       .state('app.cardinalList', {
         url: '/cardinalList',
         views: {
@@ -108,6 +118,16 @@ angular.module('starter', ['ionic', 'starter.services'])
         views: {
           'menuContent': {
             templateUrl: 'templates/page/rule.html',
+            //controller: 'ruleCtrl'
+          }
+        }
+      })
+
+      .state('app.rulePage', {
+        url: '/rulePage',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/rulePage.html',
             //controller: 'ruleCtrl'
           }
         }

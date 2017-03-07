@@ -2,7 +2,7 @@ angular.module('starter')
 
   .controller('ruleCtrl', function($scope, $http, $location, $ionicPopup, $ionicLoading, $localstorage) {
     $ionicLoading.show();
-    console.log($localstorage.getObject('token'))
+    console.log($localstorage.getObject('token'));
     if ($localstorage.getObject('token')) {
       $http({
           method: 'get',
@@ -28,7 +28,7 @@ angular.module('starter')
             template: '잠시후 다시 시도해 주세요.'
           });
           $location.path('/login');
-        })
+        });
     } else {
       $ionicLoading.hide();
       $ionicPopup.alert({
@@ -36,5 +36,5 @@ angular.module('starter')
         template: '로그인 먼저 해주세요.'
       });
       $location.path('/login');
-    };
-  })
+    }
+  });

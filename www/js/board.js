@@ -2,7 +2,7 @@ angular.module('starter')
 
   .controller('boardCtrl', function($scope, $http, $location, $ionicPopup, $ionicLoading, $localstorage, $ionicModal) {
     $ionicLoading.show();
-    console.log($localstorage.getObject('token'))
+    console.log($localstorage.getObject('token'));
     if ($localstorage.getObject('token')) {
       $http({
           method: 'get',
@@ -25,10 +25,10 @@ angular.module('starter')
           $ionicLoading.hide();
           var alertPopup = $ionicPopup.alert({
             title: 'Warning Message',
-            template: '잠시후 다시 시도해 주세요.'+token
+            template: '잠시후 다시 시도해 주세요.' + token
           });
           $location.path('/login');
-        })
+        });
     } else {
       $ionicLoading.hide();
       $ionicPopup.alert({
@@ -36,7 +36,7 @@ angular.module('starter')
         template: '로그인 먼저 해주세요.'
       });
       $location.path('/login');
-    };
+    }
 
     ///////////////////////
     // Create the login modal that we will use later
@@ -53,18 +53,18 @@ angular.module('starter')
     $scope.write = function(data) {
       console.log(data);
       console.log(data.title);
+      var fd = new FormData();
+      fd.append("title", data.title);
+      fd.append("body", data.body);
+      fd.append("file", data.file);
       $http({
           method: 'post',
-          url: 'http://bghgu.iptime.org:9303/board/write',
+          url: 'http://localhost:9303/board/write',
           headers: {
-            'Content-Type': 'multipart/form-data;boundary=gc0p4Jq0M2Yt08jU534c0p',
+            'Content-Type': undefined,
             'Authorization': $localstorage.getObject('token')
           },
-          data: ({
-            title : data.title,
-            body : data.body,
-            file : data.file
-          })
+          data: fd
         })
         .success(function(data) {
           $ionicLoading.hide();
@@ -82,7 +82,7 @@ angular.module('starter')
             template: '잠시후 다시 시도해 주세요.'
           });
           $location.path('/login');
-        })
+        });
     };
     ///////////////////////
-  })
+  });

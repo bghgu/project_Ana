@@ -113,6 +113,16 @@ angular.module('starter', ['ionic', 'starter.services'])
         }
       })
 
+      .state('app.cardinalListPage', {
+        url: '/cardinalListPage',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/cardinalList/cardinalListPage.html',
+            controller: 'cardinalListCtrl'
+          }
+        }
+      })
+
       .state('app.rule', {
         url: '/rule',
         views: {
@@ -161,7 +171,7 @@ angular.module('starter', ['ionic', 'starter.services'])
             controller: 'boardCtrl'
           }
         }
-      })
+      });
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/main');

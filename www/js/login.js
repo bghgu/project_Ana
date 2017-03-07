@@ -47,9 +47,9 @@ angular.module('starter')
         //로그인 통신 성공할 시
         .success(function(data) {
           console.log(data);
-          var count = data.count
+          var count = data.count;
           console.log(count);
-          if (count == true) {
+          if (count === true) {
             $ionicLoading.hide();
             $ionicPopup.alert({
               title: 'Welcome',
@@ -67,7 +67,7 @@ angular.module('starter')
             title: 'Warning Message',
             template: '아이디와 비밀번호를 확인해 주세요.'
           });
-        })
+        });
       ///////////////////////////
     };
-  })
+  });

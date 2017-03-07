@@ -17,5 +17,5 @@ angular.module('starter.services', [])
     clear: function() {
       $window.localStorage.clear();
     }
-  }
+  };
 }]);

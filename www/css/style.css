@@ -19,7 +19,8 @@
     background-position:center; }
 
 .loginBg {
-    background: url(../img/1.jpg);
+    background: url(../img/for.jpg);
+    background-size:cover;
     /*background-repeat: no-repeat;
     background-size: contain;
     background-position: center;

@@ -1,0 +1,28 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">notice</h1>
+    <button class="button button-primary" ng-click="modal.hide()">목록</button>
+  </ion-header-bar>
+  <ion-content>
+    <div class="list card">
+
+      <div class="item item-avatar">
+        <img src="/img/Dva.jpg">
+        <h2>{{noticePage.n_writer}}</h2>{{noticePage.n_title}}
+        <p>{{noticePage.n_writetime}}</p>
+      </div>
+
+      <div class="item item-body">
+          {{noticePage.n_content}}
+        <p>
+          <a class="subdued"> Comments</a>
+        </p>
+        <p ng-repeat="comment in comment">
+          <a class="subdued">{{comment.writername}}</a>
+          <a class="subdued">{{comment.content}}</a>
+        </p>
+      </div>
+
+    </div>
+  </ion-content>
+</ion-modal-view>

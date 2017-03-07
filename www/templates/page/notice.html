@@ -1,33 +1,31 @@
 <ion-view view-title="공지사항" hide-back-button="true">
+
+  <ion-nav-buttons side="right">
+    <button class="button" ng-click="write()">
+      글쓰기
+    </button>
+  </ion-nav-buttons>
+
   <ion-content>
     <div class="list list-inset">
-    <!--ng-repeat="List in scholarshipList"-->
-      <a class="item item-thumbnail-left" href="#/app/rulePage">
+      <!--ng-repeat="List in scholarshipList"-->
+      <a class="item item-thumbnail-left" ng-repeat="notice in notice" ng-click="notice2({{notice.n_id}})">
         <img src="/img/Dva.jpg">
         <div class="row">
-          <h2>동문회칙1</h2>
+          <h2>{{notice.n_title}}</h2>
         </div>
         <div class="row">
-          <div class="col"><p>관리자</p></div>
-          <div class="col"><p>2017-02-08 14:29</p></div>
+          <div class="col">
+            <p>{{notice.n_writer}}</p>
+          </div>
+          <div class="col">
+            <p>{{notice.n_writetime}}</p>
+          </div>
         </div>
         <div class="row">
-          <div class="col"><p>조회수 : {{1}}</p></div>
-          <div class="col"><p>댓글 : {{1}}</p></div>
-        </div>
-      </a>
-      <a class="item item-thumbnail-left" href="#/app/rulePage">
-        <img src="/img/Dva.jpg">
-        <div class="row">
-          <h2>동문회칙2</h2>
-        </div>
-        <div class="row">
-          <div class="col"><p>관리자</p></div>
-          <div class="col"><p>2017-02-08 14:29</p></div>
-        </div>
-        <div class="row">
-          <div class="col"><p>조회수 : {{1}}</p></div>
-          <div class="col"><p>댓글 : {{1}}</p></div>
+          <div class="col">
+            <p>댓글수 : {{notice.count}}</p>
+          </div>
         </div>
       </a>
     </div>

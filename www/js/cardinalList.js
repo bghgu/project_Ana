@@ -1,6 +1,6 @@
 angular.module('starter')
 
-  .controller('cardinalListCtrl', function($scope, $http, $location, $ionicPopup, $ionicLoading, $localstorage) {
+  .controller('cardinalListCtrl', function($scope, $http, $location, $ionicPopup, $ionicLoading, $localstorage, $ionicModal) {
     $scope.search = function(data) {
       $ionicLoading.show();
       if (typeof(data) == 'undefined') {
@@ -11,6 +11,7 @@ angular.module('starter')
         });
         return false;
       }
+
       if (typeof(data.keyword) == 'undefined') {
         if (data.type == "name") {
           $ionicLoading.hide();
@@ -20,7 +21,7 @@ angular.module('starter')
           });
           return false;
         }
-        if (data.type == "tel") {
+        if (data.type == "phone") {
           $ionicLoading.hide();
           $ionicPopup.alert({
             title: 'Warning Message',
@@ -28,7 +29,7 @@ angular.module('starter')
           });
           return false;
         }
-        if (data.type == "class") {
+        if (data.type == "status") {
           $ionicLoading.hide();
           $ionicPopup.alert({
             title: 'Warning Message',
@@ -37,47 +38,81 @@ angular.module('starter')
           return false;
         }
       }
-      /*
       ///////////////////////////
       //로그인 통신
-      $http({
-          //post방식
-          method: 'post',
-          //url주소
-          url: 'http://',
-          //요청 헤더값
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          //요청 바디
-          data: ({
-            type: data.type,
-            keyword: data.keyword,
-            cookie: $localstorage.getObject('cookie')
+      if ($localstorage.getObject('token')) {
+        $http({
+            //post방식
+            method: 'get',
+            //url주소
+            url: 'http://bghgu.iptime.org:9303/cardinalList/search?cNumber=' + data.cNumber + '&name=' + data.name +'&phone='+data.phone+'&status='+data.status,
+            //요청 헤더값
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': $localstorage.getObject('token')
+            }
           })
-        })
-        //로그인 통신 성공할 시
-        .success(function(data, status, headers, config) {
+          //로그인 통신 성공할 시
+          .success(function(data) {
             $ionicLoading.hide();
+            console.log(data);
             $localstorage.setObject('cardinalList', data);
-            var count = $localstorage.getObject('cardinalList').syllabus[0].code
-            if (count == "자료가 없습니다.") {
-              $ionicLoading.hide();
-              var alertPopup = $ionicPopup.alert({
-                title: 'Error',
-                template: '자료가 없습니다.'
-              });
-            })
-          //통신 실패시
-          .error(function(data) {
+            $scope.cardinalList = $localstorage.getObject('cardinalList').members;
+            ///////////////////////
+            // Form data for the login modal
+            $scope.loginData = {};
+
+            // Create the login modal that we will use later
+            $ionicModal.fromTemplateUrl('templates/page/cardinalListPage.html', {
+              scope: $scope
+            }).then(function(modal) {
+              $scope.modal = modal;
+            });
+
+            // Open the login modal
+            $scope.cardinalList2 = function(data) {
+              $localstorage.setObject('cardinalList2', null);
+              console.log(data)
+              $http({
+                  method: 'get',
+                  url: 'http://bghgu.iptime.org:9303/cardinalList/info?loginId='+data,
+                  headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': $localstorage.getObject('token')
+                  }
+                })
+                .success(function(data) {
+                  console.log(data)
+                  $localstorage.setObject('cardinalList2', data);
+                  $scope.cardinalList2 = $localstorage.getObject('cardinalList2');
+                })
+                .error(function(data, status, headers, config) {
+                  $ionicLoading.hide();
+                  var alertPopup = $ionicPopup.alert({
+                    title: 'Warning Message',
+                    template: '잠시후 다시 시도해 주세요.'+token
+                  });
+                  $location.path('/login');
+                })
+              $scope.modal.show();
+            };
+            ///////////////////////
+          })
+          .error(function(data, status, headers, config) {
             $ionicLoading.hide();
-            $ionicPopup.alert({
+            var alertPopup = $ionicPopup.alert({
               title: 'Warning Message',
-              template: '잠시후 다시 시도해 주세요.'
+              template: '잠시후 다시 시도해 주세요.' + token
             });
             $location.path('/login');
           })
-          ///////////////////////////
-          */
+      } else {
+        $ionicLoading.hide();
+        $ionicPopup.alert({
+          title: 'Warning Message',
+          template: '로그인 먼저 해주세요.'
+        });
+        $location.path('/login');
+      };
     }
   })

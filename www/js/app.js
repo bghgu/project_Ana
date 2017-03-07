@@ -118,7 +118,7 @@ angular.module('starter', ['ionic', 'starter.services'])
         views: {
           'menuContent': {
             templateUrl: 'templates/page/rule.html',
-            //controller: 'ruleCtrl'
+            controller: 'ruleCtrl'
           }
         }
       })
@@ -138,7 +138,7 @@ angular.module('starter', ['ionic', 'starter.services'])
         views: {
           'menuContent': {
             templateUrl: 'templates/page/notice.html',
-            //controller: 'noticesCtrl'
+            controller: 'noticeCtrl'
           }
         }
       })
@@ -148,7 +148,7 @@ angular.module('starter', ['ionic', 'starter.services'])
         views: {
           'menuContent': {
             templateUrl: 'templates/page/board.html',
-            //controller: 'boardCtrl'
+            controller: 'boardCtrl'
           }
         }
       })

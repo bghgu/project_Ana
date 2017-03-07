@@ -10,11 +10,7 @@ angular.module('starter')
           headers: {
             'Content-Type': 'application/json',
             'Authorization': $localstorage.getObject('token')
-          },
-          data: ({
-            username: user.username,
-            password: user.password
-          })
+          }
         })
         .success(function(data) {
           $ionicLoading.hide();

@@ -77,7 +77,7 @@ angular.module('starter', ['ionic', 'starter.services'])
         url: '/greeting1',
         views: {
           'menuContent': {
-            templateUrl: 'templates/page/greeting1.html',
+            templateUrl: 'templates/page/greeting/greeting1.html',
             //controller: 'greetingCtrl'
           }
         }
@@ -87,7 +87,7 @@ angular.module('starter', ['ionic', 'starter.services'])
         url: '/greeting2',
         views: {
           'menuContent': {
-            templateUrl: 'templates/page/greeting2.html',
+            templateUrl: 'templates/page/greeting/greeting2.html',
             //controller: 'greetingCtrl'
           }
         }
@@ -107,7 +107,7 @@ angular.module('starter', ['ionic', 'starter.services'])
         url: '/cardinalList',
         views: {
           'menuContent': {
-            templateUrl: 'templates/page/cardinalList.html',
+            templateUrl: 'templates/page/cardinalList/cardinalList.html',
             controller: 'cardinalListCtrl'
           }
         }
@@ -117,7 +117,7 @@ angular.module('starter', ['ionic', 'starter.services'])
         url: '/rule',
         views: {
           'menuContent': {
-            templateUrl: 'templates/page/rule.html',
+            templateUrl: 'templates/page/rule/rule.html',
             controller: 'ruleCtrl'
           }
         }
@@ -127,7 +127,7 @@ angular.module('starter', ['ionic', 'starter.services'])
         url: '/rulePage',
         views: {
           'menuContent': {
-            templateUrl: 'templates/page/rulePage.html',
+            templateUrl: 'templates/page/rule/rulePage.html',
             //controller: 'ruleCtrl'
           }
         }
@@ -137,8 +137,18 @@ angular.module('starter', ['ionic', 'starter.services'])
         url: '/notice',
         views: {
           'menuContent': {
-            templateUrl: 'templates/page/notice.html',
+            templateUrl: 'templates/page/notice/notice.html',
             controller: 'noticeCtrl'
+          }
+        }
+      })
+
+      .state('app.noticePage', {
+        url: '/noticePage',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/notice/noticePage.html',
+            controller: 'noticePageCtrl'
           }
         }
       })
@@ -147,7 +157,7 @@ angular.module('starter', ['ionic', 'starter.services'])
         url: '/board',
         views: {
           'menuContent': {
-            templateUrl: 'templates/page/board.html',
+            templateUrl: 'templates/page/board/board.html',
             controller: 'boardCtrl'
           }
         }

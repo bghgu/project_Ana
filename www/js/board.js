@@ -52,17 +52,18 @@ angular.module('starter')
 
     $scope.write = function(data) {
       console.log(data);
-      var fd = new FormData();
+      console.log(data.title);
       $http({
           method: 'post',
           url: 'http://bghgu.iptime.org:9303/board/write',
           headers: {
-            'Content-Type': 'multipart/mixed;boundary=gc0p4Jq0M2Yt08jU534c0p',
+            'Content-Type': 'multipart/form-data;boundary=gc0p4Jq0M2Yt08jU534c0p',
             'Authorization': $localstorage.getObject('token')
           },
           data: ({
             title : data.title,
-            body : data.body
+            body : data.body,
+            file : data.file
           })
         })
         .success(function(data) {

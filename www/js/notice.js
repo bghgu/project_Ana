@@ -19,13 +19,11 @@ angular.module('starter')
           $scope.notice = $localstorage.getObject('notice').noticeList;
           ///////////////////////
           // Create the login modal that we will use later
-          $ionicModal.fromTemplateUrl('templates/page/noticePage.html', {
+          $ionicModal.fromTemplateUrl('templates/page/notice/noticePage.html', {
             scope: $scope
           }).then(function(modal) {
             $scope.modal = modal;
           });
-
-
           // Open the login modal
           $scope.notice2 = function(data) {
             console.log(data)
@@ -42,6 +40,9 @@ angular.module('starter')
                 $localstorage.setObject('notice2', data);
                 $scope.noticePage = $localstorage.getObject('notice2').dto.noticeMore;
                 $scope.comment = $localstorage.getObject('notice2').dto.noticeMore.comments;
+                $scope.save = function(text) {
+                  console.log(text);
+                }
               })
               .error(function(data, status, headers, config) {
                 $ionicLoading.hide();
@@ -53,6 +54,7 @@ angular.module('starter')
               })
             $scope.modal.show();
           };
+
           ///////////////////////
         })
         .error(function(data, status, headers, config) {

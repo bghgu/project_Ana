@@ -13,7 +13,7 @@
       </div>
 
       <div class="item item-body">
-          {{noticePage.n_content}}
+        {{noticePage.n_content}}
         <p>
           <a class="subdued"> Comments</a>
         </p>
@@ -21,6 +21,13 @@
           <a class="subdued">{{comment.writername}}</a>
           <a class="subdued">{{comment.content}}</a>
         </p>
+      </div>
+
+      <div class="item item-body">
+        <label class="item item-input">
+          <input type="text" placeholder="댓글" ng-model="text">
+          <button class="button button-primary" ng-click="save(text)">저장</button>
+        </label>
       </div>
 
     </div>

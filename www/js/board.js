@@ -59,7 +59,7 @@ angular.module('starter')
       fd.append("file", data.file);
       $http({
           method: 'post',
-          url: 'http://localhost:9303/board/write',
+          url: 'http://bghgu.iptime.org:9303/board/write',
           headers: {
             'Content-Type': undefined,
             'Authorization': $localstorage.getObject('token')

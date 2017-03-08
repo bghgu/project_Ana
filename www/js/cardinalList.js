@@ -59,42 +59,12 @@ angular.module('starter')
             console.log(data);
             $localstorage.setObject('cardinalList', data);
             $scope.cardinalList = $localstorage.getObject('cardinalList').members;
-            /*
-            ///////////////////////
-            // Create the login modal that we will use later
-            $ionicModal.fromTemplateUrl('templates/page/cardinalList/cardinalListPage.html', {
-              scope: $scope
-            }).then(function(modal) {
-              $scope.modal = modal;
-            });
-            // Open the login modal
-            $scope.cardinalList2 = function(data) {
+            $scope.more = function(data) {
               console.log(data);
-              $http({
-                  method: 'get',
-                  url: 'http://bghgu.iptime.org:9303/cardinalList/info?loginId=' + data,
-                  headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': $localstorage.getObject('token')
-                  }
-                })
-                .success(function(data) {
-                  console.log(data);
-                  $localstorage.setObject('cardinalList2', data);
-                  $scope.cardinalList2 = $localstorage.getObject('cardinalList2');
-                })
-                .error(function(data, status, headers, config) {
-                  $ionicLoading.hide();
-                  var alertPopup = $ionicPopup.alert({
-                    title: 'Warning Message',
-                    template: '잠시후 다시 시도해 주세요.' + token
-                  });
-                  $location.path('/login');
-                });
-              $scope.modal.show();
+              $localstorage.set('order', data);
+              $location.path('/app/cardinalListPage');
+              $localstorage.get('order');
             };
-            ///////////////////////
-            */
           })
           .error(function(data, status, headers, config) {
             $ionicLoading.hide();
@@ -113,31 +83,4 @@ angular.module('starter')
         $location.path('/login');
       }
     };
-    /////////////////////////////////////////////
-    $scope.more = function(data) {
-      $location.path('/app/cardinalListPage');
-      console.log(data);
-      $http({
-          method: 'get',
-          url: 'http://bghgu.iptime.org:9303/cardinalList/info?loginId=' + data,
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': $localstorage.getObject('token')
-          }
-        })
-        .success(function(data) {
-          console.log(data);
-          $localstorage.setObject('cardinalList2', data);
-          $scope.cardinalList2 = $localstorage.getObject('cardinalList2');
-        })
-        .error(function(data, status, headers, config) {
-          $ionicLoading.hide();
-          var alertPopup = $ionicPopup.alert({
-            title: 'Warning Message',
-            template: '잠시후 다시 시도해 주세요.' + token
-          });
-          $location.path('/login');
-        });
-    };
-    /////////////////////////////////////////////
   });

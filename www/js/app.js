@@ -118,7 +118,7 @@ angular.module('starter', ['ionic', 'starter.services'])
         views: {
           'menuContent': {
             templateUrl: 'templates/page/cardinalList/cardinalListPage.html',
-            controller: 'cardinalListCtrl'
+            controller: 'cardinalListPageCtrl'
           }
         }
       })

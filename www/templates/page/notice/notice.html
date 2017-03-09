@@ -7,27 +7,24 @@
   </ion-nav-buttons>
 
   <ion-content>
-    <div class="list list-inset">
-      <!--ng-repeat="List in scholarshipList"-->
-      <a class="item item-thumbnail-left" ng-repeat="notice in notice" ng-click="notice2({{notice.n_id}})">
-        <img src="/img/Dva.jpg">
-        <div class="row">
+
+    <div class="list card" ng-repeat="notice in notice"  ng-click="more({{notice.n_id}})">
+      <div>
+        <div class="item item-avatar">
+          <img src="/img/Dva.jpg">
           <h2>{{notice.n_title}}</h2>
+          <p>{{notice.n_writer}}</p>
+          <p>{{notice.n_writetime}}</p>
         </div>
-        <div class="row">
-          <div class="col">
-            <p>{{notice.n_writer}}</p>
-          </div>
-          <div class="col">
-            <p>{{notice.n_writetime}}</p>
-          </div>
+        <div class="item item-body">
+          <p>
+            {{notice.n_content}}
+          </p>
+          <p>
+            <a class="subdued">{{notice.count}} Comments</a>
+          </p>
         </div>
-        <div class="row">
-          <div class="col">
-            <p>댓글수 : {{notice.count}}</p>
-          </div>
-        </div>
-      </a>
+      </div>
     </div>
   </ion-content>
 </ion-view>

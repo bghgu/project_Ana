@@ -39,32 +39,29 @@ angular.module('starter')
         }
       }
       ///////////////////////////
-      //로그인 통신
       if ($localstorage.getObject('token')) {
         console.log(data);
         $http({
-            //post방식
             method: 'get',
-            //url주소
             url: 'http://bghgu.iptime.org:9303/cardinalList/search?cNumber=' + data.cNumber + '&name=' + data.name + '&phone=' + data.phone + '&status=' + data.status,
-            //요청 헤더값
             headers: {
               'Content-Type': 'application/json',
               'Authorization': $localstorage.getObject('token')
             }
           })
-          //로그인 통신 성공할 시
           .success(function(data) {
             $ionicLoading.hide();
             console.log(data);
             $localstorage.setObject('cardinalList', data);
             $scope.cardinalList = $localstorage.getObject('cardinalList').members;
+            ////
             $scope.more = function(data) {
               console.log(data);
               $localstorage.set('order', data);
               $location.path('/app/cardinalListPage');
               $localstorage.get('order');
             };
+            /////
           })
           .error(function(data, status, headers, config) {
             $ionicLoading.hide();

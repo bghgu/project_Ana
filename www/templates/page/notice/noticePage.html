@@ -1,35 +1,32 @@
-<ion-modal-view>
-  <ion-header-bar>
-    <h1 class="title">notice</h1>
-    <button class="button button-primary" ng-click="modal.hide()">목록</button>
-  </ion-header-bar>
+<ion-view view-title="공지사항" hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <a class="button button-clear" href="#/app/notice" nav-clear><i class="icon ion-ios-arrow-left">목록</i></a>
+  </ion-nav-buttons>
+
   <ion-content>
     <div class="list card">
 
       <div class="item item-avatar">
         <img src="/img/Dva.jpg">
-        <h2>{{noticePage.n_writer}}</h2>{{noticePage.n_title}}
-        <p>{{noticePage.n_writetime}}</p>
+        <h2>{{notice2.n_writer}}</h2>{{notice2.n_title}}
+        <p>{{notice2.n_writetime}}</p>
       </div>
 
       <div class="item item-body">
-        {{noticePage.n_content}}
-        <p>
-          <a class="subdued"> Comments</a>
-        </p>
         <p ng-repeat="comment in comment">
-          <a class="subdued">{{comment.writername}}</a>
+          <a>{{comment.writername}}</a><br/>
           <a class="subdued">{{comment.content}}</a>
         </p>
       </div>
 
-      <div class="item item-body">
-        <label class="item item-input">
-          <input type="text" placeholder="댓글" ng-model="text">
-          <button class="button button-primary" ng-click="save(text)">저장</button>
+      <div class="item-input-inset">
+        <label class="item-input-wrapper">
+          <i class="ion-paper-airplane placeholder-icon"></i>
+          <input type="search" placeholder="댓글" ng-model="text">
         </label>
+        <button class="button button-primary" ng-click="save(text);"> 저장 </button>
       </div>
 
     </div>
   </ion-content>
-</ion-modal-view>
+</ion-view>

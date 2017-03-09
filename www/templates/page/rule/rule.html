@@ -1,19 +1,22 @@
 <ion-view view-title="총 동문회 회칙" hide-back-button="true">
   <ion-content>
-    <div class="list list-inset">
-    <!--ng-repeat="List in scholarshipList"-->
-      <a class="item item-thumbnail-left" ng-repeat="rule in rule">
-        <img src="/img/Dva.jpg">
-        <div class="row">
+    <div class="list card" ng-repeat="rule in rule">
+      <div>
+        <div class="item item-avatar">
+          <img src="/img/Dva.jpg">
           <h2>{{rule.title}}</h2>
+          <p>{{rule.writeTime}}</p>
         </div>
-        <div class="row">
-          <div class="col"><p>{{rule.content}}</p></div>
+        <div class="item item-body">
+          <p>
+            {{rule.content}}
+          </p>
+          <p>
+            <a class="subdued">1 Like</a>
+            <a class="subdued">5 Comments</a>
+          </p>
         </div>
-        <div class="row">
-          <div class="col"><p>{{rule.writeTime}}</p></div>
-        </div>
-      </a>
+      </div>
     </div>
   </ion-content>
 </ion-view>

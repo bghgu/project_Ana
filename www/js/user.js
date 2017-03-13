@@ -62,7 +62,8 @@ angular.module('starter')
               openJobPhone: data.openJobPhone,
               openJobStatus: data.jobStatus,
               openPhoto: data.openPhoto,
-              cnumber: data.cnumber
+              cnumber:  $localstorage.getObject('user').dto.cnumber,
+              status:  $localstorage.getObject('user').dto.status
             })
           })
           .success(function(data) {
@@ -77,7 +78,7 @@ angular.module('starter')
               title: 'Warning Message',
               template: '잠시후 다시 시도해 주세요.' + token
             });
-            $location.path('/login');
+            $location.path('/myPage');
           });
       }
     };

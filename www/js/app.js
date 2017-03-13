@@ -57,7 +57,17 @@ angular.module('starter', ['ionic', 'starter.services'])
         url: '/myPage',
         views: {
           'menuContent': {
-            templateUrl: 'templates/page/myPage.html',
+            templateUrl: 'templates/page/myPage/myPage.html',
+            controller: 'userCtrl'
+          }
+        }
+      })
+
+      .state('app.myPageUpdate', {
+        url: '/myPageUpdate',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/myPage/myPageUpdate.html',
             controller: 'userCtrl'
           }
         }
@@ -169,6 +179,16 @@ angular.module('starter', ['ionic', 'starter.services'])
           'menuContent': {
             templateUrl: 'templates/page/board/board.html',
             controller: 'boardCtrl'
+          }
+        }
+      })
+
+      .state('app.boardPage', {
+        url: '/boardPage',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/board/boardPage.html',
+            controller: 'boardPageCtrl'
           }
         }
       });

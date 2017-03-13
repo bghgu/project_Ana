@@ -1,6 +1,6 @@
-<ion-view view-title="공지사항" hide-back-button="true">
+<ion-view view-title="자유게시판" hide-back-button="true">
   <ion-nav-buttons side="left">
-    <a class="button button-clear" href="#/app/notice" nav-clear><i class="icon ion-ios-arrow-left">목록</i></a>
+    <a class="button button-clear" href="#/app/board" nav-clear><i class="icon ion-ios-arrow-left">목록</i></a>
   </ion-nav-buttons>
 
   <ion-content>
@@ -8,12 +8,12 @@
 
       <div class="item item-avatar">
         <img src="/img/Dva.jpg">
-        <h2>{{notice2.n_writer}}</h2>{{notice2.n_title}}
-        <p>{{notice2.n_writetime}}</p>
+        <h2>{{board2.b_writer}}</h2>{{board2.b_title}}
+        <p>{{board2.b_writetime}}</p>
       </div>
 
       <div class="item item-body">
-        <p ng-repeat="comment in comment" ng-click="[show(comment.nid),(comment.bid)]">
+        <p ng-repeat="comment in comment">
           <a>{{comment.writername}}</a></br>
           <a>{{comment.writetime}}</a><br/>
           <a class="subdued">{{comment.content}}</a>

@@ -9,11 +9,13 @@
       <div class="item item-avatar">
         <img src="/img/Dva.jpg">
         <h2>{{cardinalList2.name}}</h2>{{cardinalList2.cnumber}}기 {{cardinalList2.status}}
-        <p>{{cardinalList2.birth}}</p>
-        <p>{{cardinalList2.loginId}}</p>
-        <p>{{cardinalList2.email}}</p>
-        <p>{{cardinalList2.address}}</p>
-        <p>{{cardinalList2.jobName}}</p>
+        <p>생일 : {{cardinalList2.birth}}</p>
+        <a href="tel:{{cardinalList2.loginId}}" class="button button-outline button-positive">전화번호 : {{cardinalList2.loginId}}</a><br>
+        <a href="mailto:{{cardinalList2.email}}" class="button button-outline button-positive">이메일 : {{cardinalList2.email}}</a>
+        <p>주소 : {{cardinalList2.address}}</p>
+        <p>직장이름 : {{cardinalList2.jobName}}</p>
+        <a href="tel:{{cardinalList2.jobPhone}}" class="button button-outline button-positive">직장번호 : {{cardinalList2.jobPhone}}</a>
+        <p>직장직위 : {{cardinalList2.jobStatus}}</p>
       </div>
 
     </div>

@@ -2,8 +2,27 @@ angular.module('starter')
 
   .controller('cardinalListCtrl', function($scope, $http, $location, $ionicPopup, $ionicLoading, $localstorage, $ionicModal) {
     $scope.search = function(data) {
+      console.log(data);
       $ionicLoading.show();
       if (typeof(data) == 'undefined') {
+        $ionicLoading.hide();
+        $ionicPopup.alert({
+          title: 'Warning Message',
+          template: '항목을 선택해 주세요.'
+        });
+        return false;
+      }
+
+      if (typeof(data.cNumber) == 'undefined') {
+        $ionicLoading.hide();
+        $ionicPopup.alert({
+          title: 'Warning Message',
+          template: '기수를 선택해 주세요.'
+        });
+        return false;
+      }
+
+      if (typeof(data.type) == 'undefined') {
         $ionicLoading.hide();
         $ionicPopup.alert({
           title: 'Warning Message',
@@ -38,12 +57,25 @@ angular.module('starter')
           return false;
         }
       }
+      
+      name = phone = status = null;
+
+      if(data.type == "name") {
+        name = data.keyword;
+        console.log(name);
+      } else if(data.type == "phone") {
+        phone = data.keyword;
+        console.log(phone);
+      } else {
+        status = data.status;
+        console.log(status);
+      }
+
       ///////////////////////////
       if ($localstorage.getObject('token')) {
-        console.log(data);
         $http({
             method: 'get',
-            url: 'http://bghgu.iptime.org:9303/cardinalList/search?cNumber=' + data.cNumber + '&name=' + data.name + '&phone=' + data.phone + '&status=' + data.status,
+            url: 'http://bghgu.iptime.org:9303/cardinalList/search?cNumber=' + data.cNumber + '&name=' + name + '&phone=' + phone + '&status=' + status,
             headers: {
               'Content-Type': 'application/json',
               'Authorization': $localstorage.getObject('token')

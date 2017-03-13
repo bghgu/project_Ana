@@ -2,7 +2,6 @@ angular.module('starter')
   //로그인
   .controller('loginCtrl', function($scope, $http, $location, $ionicPopup, $ionicLoading, $localstorage) {
     $scope.login = function(user) {
-      console.log(user);
       //로딩 표시 시작
       $ionicLoading.show();
       //아이디를 입력하지 않았을 시
@@ -56,7 +55,6 @@ angular.module('starter')
               template: '환영합니다.'
             });
             $localstorage.setObject('token', data.token);
-            console.log($localstorage.getObject('token'));
             $location.path('/app/home');
           }
         })

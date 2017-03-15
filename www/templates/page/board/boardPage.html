@@ -3,6 +3,12 @@
     <a class="button button-clear" href="#/app/board" nav-clear><i class="icon ion-ios-arrow-left">목록</i></a>
   </ion-nav-buttons>
 
+  <ion-nav-buttons side="right">
+    <button class="button" ng-click="update(board2.b_id)">
+      수정/삭제
+    </button>
+  </ion-nav-buttons>
+
   <ion-content>
     <div class="list card">
 
@@ -13,7 +19,11 @@
       </div>
 
       <div class="item item-body">
-        <p ng-repeat="comment in comment">
+        <a>{{board2.b_content}}</a><br/>
+      </div>
+
+      <div class="item item-body">
+        <p ng-repeat="comment in comment" ng-click="show(comment.id)">
           <a>{{comment.writername}}</a></br>
           <a>{{comment.writetime}}</a><br/>
           <a class="subdued">{{comment.content}}</a>

@@ -8,7 +8,7 @@
 
   <ion-content>
 
-    <div class="list card" ng-repeat="notice in notice"  ng-click="more({{notice.n_id}})">
+    <div class="list card" ng-repeat="notice in notice"  ng-click="more({{notice.n_id}})" on-hold="update({{notice.n_id}})">
       <div>
         <div class="item item-avatar">
           <img src="/img/Dva.jpg">

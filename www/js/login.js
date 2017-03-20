@@ -2,6 +2,7 @@ angular.module('starter')
   //로그인
   .controller('loginCtrl', function($scope, $http, $location, $ionicPopup, $ionicLoading, $localstorage) {
     $scope.login = function(user) {
+      console.log(user);
       //로딩 표시 시작
       $ionicLoading.show();
       //아이디를 입력하지 않았을 시
@@ -34,9 +35,8 @@ angular.module('starter')
           url: 'http://bghgu.iptime.org:9303/auth',
           //요청 헤더값
           headers: {
-            'Content-Type': 'application/json; charset=utf-8',
+            'Content-Type': 'application/json',
           },
-          dataType: "json",
           //요청 바디
           data: ({
             username: user.username,
@@ -60,6 +60,7 @@ angular.module('starter')
         })
         //통신 실패시
         .error(function(data) {
+          console.log(data);
           $ionicLoading.hide();
           $ionicPopup.alert({
             title: 'Warning Message',

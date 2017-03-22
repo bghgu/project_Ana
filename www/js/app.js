@@ -112,7 +112,67 @@ angular.module('starter', ['ionic', 'starter.services'])
           }
         }
       })
-
+      .state('app.tel1', {
+        url: '/tel1',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/phone/tel1.html',
+            //controller: 'tel1Ctrl'
+          }
+        }
+      })
+      .state('app.tel2', {
+        url: '/tel2',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/phone/tel2.html',
+            //controller: 'tel1Ctrl'
+          }
+        }
+      })
+      .state('app.tel3', {
+        url: '/tel3',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/phone/tel3.html',
+            //controller: 'tel1Ctrl'
+          }
+        }
+      })
+      .state('app.tel4', {
+        url: '/tel4',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/phone/tel4.html',
+            //controller: 'tel1Ctrl'
+          }
+        }
+      }).state('app.tel5', {
+        url: '/tel5',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/phone/tel5.html',
+            //controller: 'tel1Ctrl'
+          }
+        }
+      }).state('app.tel6', {
+        url: '/tel6',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/phone/tel6.html',
+            //controller: 'tel1Ctrl'
+          }
+        }
+      })
+      .state('app.tel7', {
+        url: '/tel7',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/phone/tel7.html',
+            //controller: 'tel1Ctrl'
+          }
+        }
+      })
       .state('app.cardinalList', {
         url: '/cardinalList',
         views: {

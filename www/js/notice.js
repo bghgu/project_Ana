@@ -204,6 +204,7 @@ angular.module('starter')
             }
           }).success(function(data) {
             console.log(data);
+            $location.path('/app/notice');
             hideSheet();
             $ionicLoading.show();
             ////////
@@ -217,6 +218,7 @@ angular.module('starter')
               })
               .success(function(data) {
                 $ionicLoading.hide();
+                $location.path('/app/notice');
                 console.log(data);
                 $localstorage.setObject('notice', data);
                 $scope.notice = $localstorage.getObject('notice').noticeList;
@@ -224,7 +226,7 @@ angular.module('starter')
                 $scope.more = function(data) {
                   console.log(data);
                   $localstorage.set('order', data);
-                  $location.path('/app/noticePage');
+                  $location.path('/app/notice');
                 };
                 ///////////////////
               })

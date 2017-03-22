@@ -4,7 +4,7 @@
     margin:auto;
     background-repeat:no-repeat;
     background-position:center; }
-    
+
 #tour-view .slider {
   height: 100%;
 }
@@ -40,6 +40,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+
     /*width: 80%;
     height: 246px;
     margin: auto;

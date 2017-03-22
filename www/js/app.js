@@ -107,7 +107,7 @@ angular.module('starter', ['ionic', 'starter.services'])
         url: '/tel',
         views: {
           'menuContent': {
-            templateUrl: 'templates/page/tel.html',
+            templateUrl: 'templates/page/phone/tel.html',
             //controller: 'telCtrl'
           }
         }

@@ -62,8 +62,7 @@ angular.module('starter')
               openJobPhone: data.openJobPhone,
               openJobStatus: data.jobStatus,
               openPhoto: data.openPhoto,
-              cnumber:  $localstorage.getObject('user').dto.cnumber,
-              status:  $localstorage.getObject('user').dto.status
+              cnumber:  $localstorage.getObject('user').dto.cnumber
             })
           })
           .success(function(data) {

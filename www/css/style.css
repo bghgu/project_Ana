@@ -1,5 +1,10 @@
 /* Empty. Add your own CSS if you like */
-
+.app-logo {
+    max-width:120px;
+    margin:auto;
+    background-repeat:no-repeat;
+    background-position:center; }
+    
 #tour-view .slider {
   height: 100%;
 }

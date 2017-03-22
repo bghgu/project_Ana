@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.skhu.sw12" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>project_Ana</name>
+  <name>성공회대학교 총 동문회</name>
   <description>
     동문회 프로젝트.
   </description>
@@ -13,6 +13,11 @@
   <access launch-external="true" origin="mailto:*"/>
   <access launch-external="true" origin="sms:*"/>
   <access launch-external="true" origin="file:*"/>
+  <allow-navigation href="*"/>
+  <allow-navigation href="http://*/*"/>
+  <allow-navigation href="https://*/*"/>
+  <allow-navigation href="data:*"/>
+  <allow-intent href="*"/>
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>

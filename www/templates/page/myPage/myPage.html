@@ -1,47 +1,36 @@
 <ion-view view-title="마이 페이지" hide-back-button="true">
   <ion-content>
-    <div class="list list-inset">
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">이름</span></br>
-        <span class="input-label">{{myPage.name}}</span>
-      </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">기수</span></br>
-        <span class="input-label">{{myPage.cnumber}}기</span>
-      </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">지위</span></br>
-        <span class="input-label">{{myPage.status}}</span>
-      </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">생년월일</span></br>
-        <span class="input-label">{{myPage.birth}}</span>
-      </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">전화번호</span></br>
-        <span class="input-label">{{myPage.phone}}</span>
-      </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Email</span></br>
-        <span class="input-label">{{myPage.email}}</span>
-      </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">주소</span></br>
-        <span class="input-label">{{myPage.address}}</span>
-      </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">소속 직장</span></br>
-        <span class="input-label">{{myPage.jobName}}</span>
-      </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">직장 지위</span></br>
-        <span class="input-label">{{myPage.jobStatus}}</span>
-      </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">직장 번호</span></br>
-        <span class="input-label">{{myPage.jobPhone}}</span>
-      </label></br>
-      <a class="col col-33 button button-outline button-positive" href="#/app/myPageUpdate"> 수정하기 </a>
-    </div>
+    <div class="item item-image" style="text-align:left">
+      <img src="img/dva.jpg" style="max-width: 100% height: auto">
+    <a class="item item-icon-left">
+      <i class="icon ion-person-stalker"></i> {{myPage.cnumber}}기 {{myPage.status}}
+    </a>
+    <a class="item item-icon-left">
+      <i class="icon ion-android-person"></i> {{myPage.name}}
+    </a>
+    <a class="item item-icon-left">
+      <i class="icon ion-android-call"></i> {{myPage.loginId}}
+    </a>
+    <a class="item item-icon-left">
+      <i class="icon ion-android-textsms"></i> {{myPage.email}}
+    </a>
+    <a class="item item-icon-left">
+      <i class="icon ion-home"></i> {{myPage.address}}
+    </a>
+    <a class="item item-icon-left">
+      <i class="icon ion-ios-world"></i> {{myPage.jobName}}
+    </a>
+    <a class="item item-icon-left">
+      <i class="icon ion-social-whatsapp"></i> {{myPage.jobPhone}}
+    </a>
+    <a class="item item-icon-left">
+      <i class="icon ion-ios-personadd"></i> {{myPage.jobStatus}}
+    </a>
+    <a class="item item-icon-left">
+      <i class="icon ion-android-favorite"></i> {{myPage.birth}}
+    </a>
+  </div>
+  <a class="col col-33 button button-outline button-positive" href="#/app/myPageUpdate"> 수정하기 </a>
+
   </ion-content>
 </ion-view>

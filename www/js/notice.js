@@ -28,7 +28,7 @@ angular.module('starter')
           $ionicLoading.hide();
           var alertPopup = $ionicPopup.alert({
             title: 'Warning Message',
-            template: '잠시후 다시 시도해 주세요.' + token
+            template: '잠시후 다시 시도해 주세요.'
           });
           $location.path('/login');
         });
@@ -56,11 +56,11 @@ angular.module('starter')
     $scope.write = function(data) {
       $ionicLoading.show();
       console.log(data);
-      console.log(data.title);
       var fd = new FormData();
       fd.append("title", data.title);
       fd.append("body", data.body);
       fd.append("file", data.file);
+
       $http({
           method: 'post',
           url: 'http://bghgu.iptime.org:9303/notice/write',
@@ -98,9 +98,9 @@ angular.module('starter')
               })
               .error(function(data, status, headers, config) {
                 $ionicLoading.hide();
-                var alertPopup = $ionicPopup.alert({
+                $ionicPopup.alert({
                   title: 'Warning Message',
-                  template: '잠시후 다시 시도해 주세요.' + token
+                  template: '잠시후 다시 시도해 주세요.'
                 });
                 $location.path('/login');
               });
@@ -234,7 +234,7 @@ angular.module('starter')
                 $ionicLoading.hide();
                 var alertPopup = $ionicPopup.alert({
                   title: 'Warning Message',
-                  template: '잠시후 다시 시도해 주세요.' + token
+                  template: '잠시후 다시 시도해 주세요.'
                 });
                 $location.path('/login');
               });

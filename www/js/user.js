@@ -2,7 +2,6 @@ angular.module('starter')
 
   .controller('userCtrl', function($scope, $http, $location, $ionicPopup, $ionicLoading, $localstorage) {
     $ionicLoading.show();
-    console.log($localstorage.getObject('token'));
     if ($localstorage.getObject('token')) {
       $http({
           method: 'get',
@@ -20,9 +19,9 @@ angular.module('starter')
         })
         .error(function(data, status, headers, config) {
           $ionicLoading.hide();
-          var alertPopup = $ionicPopup.alert({
+          $ionicPopup.alert({
             title: 'Warning Message',
-            template: '잠시후 다시 시도해 주세요.' + token
+            template: '잠시후 다시 시도해 주세요.'
           });
           $location.path('/login');
         });
@@ -34,12 +33,22 @@ angular.module('starter')
       });
       $location.path('/login');
     }
+
     /////////////////////////////////////////
     $scope.update = function(data) {
+      //$ionicLoading.show();
       console.log(data);
+      //////////////////////////////////
+      if (typeof(data) == 'undefined') {
+        data = $localstorage.getObject('user').dto;
+      }
+      //////////////////////////////////
+
       if ($localstorage.getObject('token')) {
+        console.log(data);
         $http({
             method: 'post',
+            //url: 'http://bghgu.iptime.org:9303/user/update',
             url: 'http://bghgu.iptime.org:9303/user/update',
             headers: {
               'Content-Type': 'application/json',
@@ -72,13 +81,15 @@ angular.module('starter')
             $scope.myPage = $localstorage.getObject('user').dto;
           })
           .error(function(data, status, headers, config) {
+            console.log(data);
             $ionicLoading.hide();
-            var alertPopup = $ionicPopup.alert({
+            $ionicPopup.alert({
               title: 'Warning Message',
-              template: '잠시후 다시 시도해 주세요.' + token
+              template: '잠시후 다시 시도해 주세요.'
             });
-            $location.path('/myPage');
+            //$location.path('/myPage');
           });
       }
     };
+    /////////////////////////////////////////
   });

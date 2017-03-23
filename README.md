@@ -32,7 +32,7 @@ Ionic framework와 Angular.js을 사용한 하이브리드앱
   - release용 android apk 빌드
 
   ```bash
-  ionic build --release android
+  ionic build android --release
   ```
   - 키스토어 생성 keytool
 

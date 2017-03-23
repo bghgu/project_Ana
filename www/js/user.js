@@ -48,7 +48,7 @@ angular.module('starter')
         console.log(data);
         $http({
             method: 'post',
-            //url: 'http://bghgu.iptime.org:9303/user/update',
+            //url: 'http://:9303/user/update',
             url: 'http://bghgu.iptime.org:9303/user/update',
             headers: {
               'Content-Type': 'application/json',
@@ -59,9 +59,9 @@ angular.module('starter')
               password: $localstorage.getObject('user').dto.password,
               email: data.email,
               address: data.adress,
-              jobName: data.workPlace,
-              jobPhone: data.workTel,
-              jobStatus: data.workPosition,
+              jobName: data.jobName,
+              jobPhone: data.jobPhone,
+              jobStatus: data.jobStatus,
               photo: data.photo,
               openBirth: data.openBirth,
               openPhone: data.openPhone,
@@ -69,7 +69,7 @@ angular.module('starter')
               openAddress: data.openEmail,
               openJobName: data.openJobName,
               openJobPhone: data.openJobPhone,
-              openJobStatus: data.jobStatus,
+              openJobStatus: data.openjobStatus,
               openPhoto: data.openPhoto,
               cnumber:  $localstorage.getObject('user').dto.cnumber
             })

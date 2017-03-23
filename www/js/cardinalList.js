@@ -5,15 +5,15 @@ angular.module('starter')
       console.log(data);
       $ionicLoading.show();
 
+      //all 검색
       if (typeof(data) == 'undefined') {
-        $ionicLoading.hide();
-        $ionicPopup.alert({
-          title: 'Warning Message',
-          template: '항목을 선택해 주세요.'
-        });
-        return false;
+        cNumber = "";
+        name = "";
+        phone = "";
+        status = "";
       }
 
+      /*
       if (typeof(data.cNumber) == 'undefined') {
         $ionicLoading.hide();
         $ionicPopup.alert({
@@ -34,14 +34,12 @@ angular.module('starter')
 
       if (typeof(data.keyword) == 'undefined') {
         if (data.type == "name") {
-          /*
           $ionicLoading.hide();
           $ionicPopup.alert({
             title: 'Warning Message',
             template: '이름을 입력해 주세요'
           });
           return false;
-          */
         }
         if (data.type == "phone") {
           $ionicLoading.hide();
@@ -60,7 +58,7 @@ angular.module('starter')
           return false;
         }
       }
-
+      */
       name = phone = status = null;
 
       if(data.type == "name") {

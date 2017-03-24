@@ -181,13 +181,10 @@ angular.module('starter')
     };
     */
     /////////////////////////////////////////
-    //댓글 삭제, 수정 메소드
+    //글 삭제, 수정 메소드
     $scope.update = function(data) {
       // Show the action sheet
       var hideSheet = $ionicActionSheet.show({
-        buttons: [{
-          text: '수정'
-        }, ],
         destructiveText: '삭제',
         destructiveButtonClicked: function() {
           console.log(data);

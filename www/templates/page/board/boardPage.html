@@ -3,19 +3,13 @@
     <a class="button button-clear" href="#/app/board" nav-clear><i class="icon ion-ios-arrow-left">목록</i></a>
   </ion-nav-buttons>
 
-  <ion-nav-buttons side="right">
-    <button class="button" ng-click="update(board2.b_id)">
-      수정/삭제
-    </button>
-  </ion-nav-buttons>
-
   <ion-content>
     <div class="list card">
 
       <div class="item item-avatar">
-        <img src="img/Dva.jpg">
+        <!--<img src="img/Dva.jpg">-->
         <h2>{{board2.b_writer}}</h2>{{board2.b_title}}
-        <p>{{board2.b_writetime}}</p>
+        <p>{{board2.b_writeTime}}</p>
       </div>
 
       <div class="item item-body">
@@ -36,6 +30,11 @@
           <input type="search" placeholder="댓글" ng-model="text">
         </label>
         <button class="button button-primary" ng-click="save(text);"> 저장 </button>
+      </div>
+
+      <div class="row">
+        <button class="col button button-outline button-positive" ng-click="update(board2.b_id);"> 글 수정 </button>
+        <button class="col button button-outline button-assertive" ng-click="delete(board2.b_id);"> 글 삭제 </button>
       </div>
 
     </div>

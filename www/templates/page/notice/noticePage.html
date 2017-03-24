@@ -13,7 +13,7 @@
     <div class="list card">
 
       <div class="item item-avatar">
-        <img src="img/Dva.jpg">
+        <!--<img src="img/Dva.jpg">-->
         <h2>{{notice2.n_writer}}</h2>{{notice2.n_title}}
         <p>{{notice2.n_writetime}}</p>
       </div>
@@ -36,6 +36,11 @@
           <input type="search" placeholder="댓글" ng-model="text">
         </label>
         <button class="button button-primary" ng-click="save(text);"> 저장 </button>
+      </div>
+
+      <div class="row">
+        <button class="col button button-outline button-positive" ng-click="update2(notice2.n_id);"> 글 수정 </button>
+        <button class="col button button-outline button-assertive" ng-click="delete2(notice2.n_id);"> 글 삭제 </button>
       </div>
 
     </div>

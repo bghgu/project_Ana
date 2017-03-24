@@ -18,6 +18,7 @@ angular.module('starter')
         $localstorage.setObject('notice2', data);
         $scope.notice2 = $localstorage.getObject('notice2').dto.noticeMore;
         $scope.comment = $localstorage.getObject('notice2').dto.noticeMore.comments;
+
       })
       .error(function(data) {
         $ionicLoading.hide();
@@ -142,7 +143,8 @@ angular.module('starter')
         }
       });
     };
-
+    /*
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //글 수정, 삭제
     /////////////////////////////////////////
     $scope.update = function(data) {
@@ -168,10 +170,8 @@ angular.module('starter')
             }).success(function(data) {
               console.log(data);
               hideSheet();
-              $ionicLoading.show();
               //리콜
               ////////////////////////////////////////////////
-
               $http({
                   method: 'get',
                   url: 'http://bghgu.iptime.org:9303/notice/page',
@@ -185,7 +185,18 @@ angular.module('starter')
                   $ionicLoading.hide();
                   $localstorage.setObject('notice', data);
                   $scope.notice = $localstorage.getObject('notice').noticeList;
-                  $location.path('/app/notice');
+
+                  $ionicPopup.show({
+                    template: '글 삭제 성공',
+                    title: 'success',
+                    scope: $scope.more = $location.path('/app/notice'),
+                    buttons: [{
+                        text: '<b>확인</b>',
+                        type: 'button-positive',
+
+                      }]
+                    });
+
                 })
                 .error(function(data, status, headers, config) {
                   $ionicLoading.hide();
@@ -195,7 +206,7 @@ angular.module('starter')
                   });
                   $location.path('/login');
                 });
-                ////////////////////////////////////////////////
+              ////////////////////////////////////////////////
             })
             .error(function(data, status, headers, config) {
               $ionicLoading.hide();
@@ -262,9 +273,12 @@ angular.module('starter')
               });
           });
           /////////////////////////////////////////////////
-          */
+
         }
       });
     };
     ///////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    */
+
   });

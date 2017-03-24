@@ -126,9 +126,6 @@ angular.module('starter')
     $scope.update = function(data) {
       // Show the action sheet
       var hideSheet = $ionicActionSheet.show({
-        buttons: [{
-          text: '수정'
-        }, ],
         destructiveText: '삭제',
         destructiveButtonClicked: function() {
           console.log(data);
@@ -147,6 +144,12 @@ angular.module('starter')
             console.log(data);
             hideSheet();
             $ionicLoading.show();
+            if(data.dto === null) {
+              $ionicPopup.alert({
+                title: 'Warning Message',
+                template: '자신의 게시글이 아닙니다.'
+              });
+            }
             ////////
             $http({
                 method: 'get',
@@ -171,9 +174,9 @@ angular.module('starter')
               })
               .error(function(data, status, headers, config) {
                 $ionicLoading.hide();
-                var alertPopup = $ionicPopup.alert({
+                $ionicPopup.alert({
                   title: 'Warning Message',
-                  template: '잠시후 다시 시도해 주세요.' + token
+                  template: '잠시후 다시 시도해 주세요.'
                 });
                 $location.path('/login');
               });

@@ -1,5 +1,5 @@
 <ion-view view-title="마이 페이지" hide-back-button="true">
-  <ion-content>
+  <ion-content class="mainbg">
 
     <div class="list list-inset">
       <div class="item item-image" style="text-align:left">
@@ -16,7 +16,7 @@
           <i class="icon ion-android-call"></i> {{myPage.loginId}}
         </a>
         <a class="item item-icon-left">
-          <i class="icon ion-android-textsms"></i> {{myPage.email}}
+          <i class="icon ion-email"></i> {{myPage.email}}
         </a>
         <a class="item item-icon-left">
           <i class="icon ion-home"></i> {{myPage.address}}
@@ -36,6 +36,6 @@
         <a class="col button button-full button-positive" href="#/app/myPageUpdate"> 수정하기 </a>
       </div>
     </div>
-    
+
   </ion-content>
 </ion-view>

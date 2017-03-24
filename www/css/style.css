@@ -35,6 +35,12 @@
     z-index: 2;
     position: relative;*/
 }
+.mainbg {
+    background: url(../img/main.png);
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
 .introbg {
     background: url(../img/introbg.png);
     background-repeat: no-repeat;

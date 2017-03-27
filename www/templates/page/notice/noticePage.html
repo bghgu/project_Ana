@@ -3,11 +3,11 @@
     <a class="button button-clear" href="#/app/notice" nav-clear><i class="icon ion-ios-arrow-left">목록</i></a>
   </ion-nav-buttons>
 
-  <ion-nav-buttons side="right">
+  <!--<ion-nav-buttons side="right">
     <button class="button" ng-click="update(notice2.n_id)">
       수정/삭제
     </button>
-  </ion-nav-buttons>
+  </ion-nav-buttons>-->
 
   <ion-content class="mainbg">
     <div class="list card">
@@ -36,11 +36,6 @@
           <input type="search" placeholder="댓글" ng-model="text">
         </label>
         <button class="button button-primary" ng-click="save(text);"> 저장 </button>
-      </div>
-
-      <div class="row">
-        <button class="col button button-outline button-positive" ng-click="update2(notice2.n_id);"> 글 수정 </button>
-        <button class="col button button-outline button-assertive" ng-click="delete2(notice2.n_id);"> 글 삭제 </button>
       </div>
 
     </div>

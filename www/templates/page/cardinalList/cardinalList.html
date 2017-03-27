@@ -43,7 +43,7 @@
     </div>
 
     <a class="item item-avatar" ng-repeat="cardinalList in cardinalList" ng-click="more(cardinalList.loginId)">
-      <img src="http://bghgu.iptime.org:8685/skhu/resources/userImages/{{cardinalList.photo}}">
+      <img src="http://bghgu.iptime.org:8685/skhu/resources/userImages/{{cardinalList.photo}}" onError='this.src="img/no_pic.gif"'>
       <h2>{{cardinalList.name}}</h2>
       <div class="col">{{cardinalList.cnumber}}기 {{cardinalList.status}} </div>
     </a>

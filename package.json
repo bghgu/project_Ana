@@ -1,5 +1,5 @@
 {
-  "name": "Skhu Alumni Association",
+  "name": "project_Ana",
   "version": "1.0.1",
   "description": "Skhu Alumni Association: An Ionic project_Ana",
   "dependencies": {
@@ -24,5 +24,10 @@
     "cordova-plugin-splashscreen",
     "ionic-plugin-keyboard"
   ],
-  "cordovaPlatforms": []
+  "cordovaPlatforms": [],
+  "repository": {
+  "type": "git",
+  "url": "git://github.com/ektmf1993/repository.git"
+},
+"license": "ISC"
 }

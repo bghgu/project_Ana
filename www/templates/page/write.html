@@ -3,7 +3,7 @@
     <h1 class="title">글쓰기</h1>
     <button class="button button-primary" ng-click="modal.hide()">목록</button>
   </ion-header-bar>
-  <ion-content>
+  <ion-content class="mainbg">
     <div class="list card">
 
       <label class="item item-input">
@@ -12,7 +12,7 @@
       </label>
       <label class="item item-input">
         <span class="input-label">첨부 파일</span>
-        <input type="file" ng-file-select="text.file">
+        <input type="file" fileread="text.file">
       </label>
       <div class="list list-inset">내용
         <textarea rows="10" cols="40" ng-model="text.body"> </textarea>

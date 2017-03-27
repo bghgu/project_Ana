@@ -73,11 +73,29 @@ angular.module('starter', ['ionic', 'starter.services'])
         }
       })
 
-      .state('app.introduce', {
-        url: '/introduce',
+      .state('app.introduce1', {
+        url: '/introduce1',
         views: {
           'menuContent': {
-            templateUrl: 'templates/page/introduce.html',
+            templateUrl: 'templates/page/introduce/introduce1.html',
+            //controller: 'introduceCtrl'
+          }
+        }
+      })
+      .state('app.introduce2', {
+        url: '/introduce2',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/introduce/introduce2.html',
+            //controller: 'introduceCtrl'
+          }
+        }
+      })
+      .state('app.introduce3', {
+        url: '/introduce3',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/introduce/introduce3.html',
             //controller: 'introduceCtrl'
           }
         }

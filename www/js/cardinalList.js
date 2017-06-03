@@ -39,10 +39,12 @@ angular.module('starter')
           .success(function(data) {
             $ionicLoading.hide();
             console.log(data);
-            $localstorage.setObject('cardinalList', data);
-            for(i = 0; i < data.length; i++) {
-              console.log(data[i]);
+            for(i = 0; i < data.members.length; i++) {
+              if(data.members[i].photo === null) {
+                data.members[i].photo = "no_pic.gif";
+              }
             }
+            $localstorage.setObject('cardinalList', data);
             $scope.cardinalList = $localstorage.getObject('cardinalList').members;
             ////
             $scope.more = function(data) {
@@ -57,7 +59,7 @@ angular.module('starter')
             $ionicLoading.hide();
             var alertPopup = $ionicPopup.alert({
               title: 'Warning Message',
-              template: '잠시후 다시 시도해 주세요.' + token
+              template: '잠시후 다시 시도해 주세요.'
             });
             $location.path('/login');
           });

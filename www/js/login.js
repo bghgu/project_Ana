@@ -32,7 +32,8 @@ angular.module('starter')
           //post방식
           method: 'post',
           //url주소
-          url: 'http://bghgu.iptime.org:9303/auth',
+          //url: 'http://bghgu.iptime.org:9303/auth',
+          url: 'http://192.168.0.62:9303/auth',
           //요청 헤더값
           headers: {
             'Content-Type': 'application/json',
@@ -48,6 +49,13 @@ angular.module('starter')
           console.log(data);
           var count = data.count;
           console.log(count);
+          $location.path('/app/home');
+          $ionicLoading.hide();
+          $ionicPopup.alert({
+            title: 'Welcome',
+            template: '환영합니다.'
+          });
+          /*
           if (count === true) {
             $ionicLoading.hide();
             $ionicPopup.alert({
@@ -56,7 +64,7 @@ angular.module('starter')
             });
             $localstorage.setObject('token', data.token);
             $location.path('/app/home');
-          }
+          } */
         })
         //통신 실패시
         .error(function(data) {

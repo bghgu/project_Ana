@@ -1,0 +1,37 @@
+<ion-view view-title="광고" hide-back-button="true">
+  <ion-content class="mainbg">
+
+    <div class="row responsive-sm padding remvoeBP">
+      <div class="col">
+        <div class="list list-inset removePM">
+
+          <div class="list">
+            <!-- 선택 메뉴-->
+
+            <div class="col">
+              <label class="item item-input">
+                <input type="search" ng-model="data.adName" placeholder="제목" >
+              </label>
+            </div>
+
+            <div class="col">
+              <label class="item item-input">
+                <input type="search" ng-model="data.text" placeholder="내용" >
+              </label>
+            </div>
+
+          </div>
+
+        </div>
+        <button class="button button-block button-positive" ng-click="search(data);"> 검색 </button>
+      </div>
+    </div>
+
+    <a class="item item-avatar" ng-repeat="ad in ad" ng-click="more(ad)">
+      <img src="http://bghgu.iptime.org:8685/skhu/resources/userImages/{{ad.photo}}">
+      <h2>{{ad.adName}}</h2>
+      <div class="col">{{ad.memName}}</div>
+    </a>
+
+  </ion-content>
+</ion-view>

@@ -5,10 +5,11 @@
     </button>
   </ion-nav-buttons>
   <ion-content class="mainbg">
+
     <div class="list card" ng-repeat="board in board" ng-click="more({{board.b_id}})" on-hold="update({{board.b_id}})">
 
       <div class="item item-avatar">
-        <!--<img src="img/Dva.jpg">-->
+        <img src="http://bghgu.iptime.org:8685/skhu/resources/userImages/{{board.b_photo}}">
         <h2> {{board.b_title}} </h2>
         <p> {{board.b_writer}} </p>
         <p> {{board.b_writetime}} </p>

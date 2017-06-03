@@ -5,8 +5,8 @@ angular.module('starter')
     if ($localstorage.getObject('token')) {
       $http({
           method: 'get',
-          //url: 'http://192.168.0.62:9303/board/page',
-          url: 'http://bghgu.iptime.org:9303/board/page',
+          url: 'http://192.168.0.62:9303/board/page',
+          //url: 'http://bghgu.iptime.org:9303/board/page',
           headers: {
             'Content-Type': 'application/json',
             'Authorization': $localstorage.getObject('token')
@@ -64,8 +64,8 @@ angular.module('starter')
       fd.append("file", data.file);
       $http({
           method: 'post',
-          //url: 'http://192.168.0.62:9303/board/write',
-          url: 'http://bghgu.iptime.org:9303/board/write',
+          url: 'http://192.168.0.62:9303/board/write',
+          //url: 'http://bghgu.iptime.org:9303/board/write',
           headers: {
             'Content-Type': undefined,
             'Authorization': $localstorage.getObject('token')
@@ -80,8 +80,8 @@ angular.module('starter')
           if ($localstorage.getObject('token')) {
             $http({
                 method: 'get',
-                //url: 'http://192.168.0.62:9303/board/page',
-                url: 'http://bghgu.iptime.org:9303/board/page',
+                url: 'http://192.168.0.62:9303/board/page',
+                //url: 'http://bghgu.iptime.org:9303/board/page',
                 headers: {
                   'Content-Type': 'application/json',
                   'Authorization': $localstorage.getObject('token')
@@ -132,7 +132,8 @@ angular.module('starter')
           ////////////////////////////////////////////////
           $http({
             method: 'Delete',
-            url: 'http://bghgu.iptime.org:9303/board/delete/' + data,
+            //url: 'http://bghgu.iptime.org:9303/board/delete/' + data,
+            url: 'http://192.168.0.62:9303/board/delete/' + data,
             headers: {
               'Content-Type': 'application/json',
               'Authorization': $localstorage.getObject('token')
@@ -153,7 +154,8 @@ angular.module('starter')
             ////////
             $http({
                 method: 'get',
-                url: 'http://bghgu.iptime.org:9303/board/page',
+                //url: 'http://bghgu.iptime.org:9303/board/page',
+                url: 'http://192.168.0.62:9303/board/page',
                 headers: {
                   'Content-Type': 'application/json',
                   'Authorization': $localstorage.getObject('token')

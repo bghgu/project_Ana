@@ -269,6 +269,26 @@ angular.module('starter', ['ionic', 'starter.services'])
             controller: 'boardPageCtrl'
           }
         }
+      })
+
+      .state('app.ad', {
+        url: '/ad',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/ad/ad.html',
+            controller: 'adCtrl'
+          }
+        }
+      })
+
+      .state('app.adPage', {
+        url: '/adPage',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/page/ad/adPage.html',
+            controller: 'adPageCtrl'
+          }
+        }
       });
 
     // if none of the above states are matched, use this as the fallback

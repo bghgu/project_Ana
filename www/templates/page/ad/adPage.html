@@ -1,0 +1,26 @@
+<ion-view view-title="공지사항" hide-back-button="true">
+
+  <ion-nav-buttons side="left">
+    <a class="button button-clear" href="#/app/ad" nav-clear><i class="icon ion-ios-arrow-left">목록</i></a>
+  </ion-nav-buttons>
+
+  <ion-content class="mainbg">
+    <div class="list card">
+
+      <div class="item item-avatar">
+        <img src="http://bghgu.iptime.org:8685/skhu/resources/userImages/{{adPage.photo}}" onError='this.src="img/no_pic.gif"'>
+        <h2>{{adPage.adName}}</h2>
+        <p>{{adPage.memGisu}}기 {{adPage.memName}}</p>
+      </div>
+
+      <div class="item item-image">
+        <img src="http://bghgu.iptime.org:8685/skhu{{adPage.img}}" onError='this.src="img/no_pic.gif"'>
+      </div>
+
+      <a class="item">
+         {{adPage.text}}
+      </a>
+
+    </div>
+  </ion-content>
+</ion-view>

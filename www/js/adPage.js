@@ -1,11 +1,11 @@
 angular.module('starter')
 
-  .controller('cardinalListPageCtrl', function($scope, $http, $location, $ionicPopup, $ionicLoading, $localstorage) {
+  .controller('adPageCtrl', function($scope, $http, $location, $ionicPopup, $ionicLoading, $localstorage) {
     $ionicLoading.show();
     $http({
       method: 'get',
-      //url: 'http://bghgu.iptime.org:9303/cardinalList/info?loginId=' + $localstorage.get('order'),
-      url: 'http://192.168.0.62:9303/cardinalList/info?loginId=' + $localstorage.get('order'),
+      url: 'http://192.168.0.62:9303/ad/info?id=' + $localstorage.get('order'),
+      //url: 'http://bghgu.iptime.org:9303/ad/info?id=' + $localstorage.get('order'),
       headers: {
         'Content-Type': 'application/json',
         'Authorization': $localstorage.getObject('token')
@@ -14,8 +14,9 @@ angular.module('starter')
     .success(function(data) {
       $ionicLoading.hide();
       console.log(data);
-      $localstorage.setObject('cardinalList2', data);
-      $scope.cardinalList2 = $localstorage.getObject('cardinalList2');
+      $localstorage.setObject('adPage', data);
+      $scope.adPage = $localstorage.getObject('adPage').dto;
+      $scope.adPage.photo = $localstorage.get('photo');
     })
     .error(function(data) {
       $ionicLoading.hide();

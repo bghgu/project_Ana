@@ -7,7 +7,8 @@ angular.module('starter')
     /////////////////////////////////////////////////
     $http({
         method: 'get',
-        url: 'http://bghgu.iptime.org:9303/notice/page/' + $localstorage.get('order'),
+        url: 'http://192.168.0.62:9303/notice/page/' + $localstorage.get('order'),
+        //url: 'http://bghgu.iptime.org:9303/notice/page/' + $localstorage.get('order'),
         headers: {
           'Content-Type': 'application/json',
           'Authorization': $localstorage.getObject('token')
@@ -18,7 +19,7 @@ angular.module('starter')
         $localstorage.setObject('notice2', data);
         $scope.notice2 = $localstorage.getObject('notice2').dto.noticeMore;
         $scope.comment = $localstorage.getObject('notice2').dto.noticeMore.comments;
-
+        console.log(data);
       })
       .error(function(data) {
         $ionicLoading.hide();
@@ -36,7 +37,8 @@ angular.module('starter')
       $ionicLoading.show();
       $http({
           method: 'post',
-          url: 'http://bghgu.iptime.org:9303/notice/comment/write',
+          //url: 'http://bghgu.iptime.org:9303/notice/comment/write',
+          url: 'http://192.168.0.62:9303/notice/comment/write',
           headers: {
             'Content-Type': 'application/json',
             'Authorization': $localstorage.getObject('token')
@@ -51,7 +53,8 @@ angular.module('starter')
           /////////////////////////////////////////////////
           $http({
               method: 'get',
-              url: 'http://bghgu.iptime.org:9303/notice/page/' + $localstorage.get('order'),
+              //url: 'http://bghgu.iptime.org:9303/notice/page/' + $localstorage.get('order'),
+              url: 'http://192.168.0.62:9303/notice/page/' + $localstorage.get('order'),
               headers: {
                 'Content-Type': 'application/json',
                 'Authorization': $localstorage.getObject('token')
@@ -94,7 +97,8 @@ angular.module('starter')
         destructiveButtonClicked: function() {
           $http({
             method: 'Delete',
-            url: 'http://bghgu.iptime.org:9303/notice/comment/delete',
+            //url: 'http://bghgu.iptime.org:9303/notice/comment/delete',
+            url: 'http://192.168.0.62:9303/notice/comment/delete',
             headers: {
               'Content-Type': 'application/json',
               'Authorization': $localstorage.getObject('token')
@@ -109,7 +113,8 @@ angular.module('starter')
             /////////////////////////////////////////////////
             $http({
                 method: 'get',
-                url: 'http://bghgu.iptime.org:9303/notice/page/' + $localstorage.get('order'),
+                url: 'http://192.168.0.62:9303/notice/page/' + $localstorage.get('order'),
+                //url: 'http://bghgu.iptime.org:9303/notice/page/' + $localstorage.get('order'),
                 headers: {
                   'Content-Type': 'application/json',
                   'Authorization': $localstorage.getObject('token')

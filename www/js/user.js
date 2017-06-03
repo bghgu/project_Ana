@@ -5,7 +5,8 @@ angular.module('starter')
     if ($localstorage.getObject('token')) {
       $http({
           method: 'get',
-          url: 'http://bghgu.iptime.org:9303/user/userInfo',
+          //url: 'http://bghgu.iptime.org:9303/user/userInfo',
+          url: 'http://192.168.0.62:9303/user/userInfo',
           headers: {
             'Content-Type': 'application/json',
             'Authorization': $localstorage.getObject('token')
@@ -13,6 +14,7 @@ angular.module('starter')
         })
         .success(function(data) {
           $ionicLoading.hide();
+          console.log(data);
           $localstorage.setObject('user', data);
           $scope.myPage = $localstorage.getObject('user').dto;
         })
@@ -83,7 +85,8 @@ angular.module('starter')
       if ($localstorage.getObject('token')) {
         $http({
             method: 'post',
-            url: 'http://bghgu.iptime.org:9303/user/update',
+            //url: 'http://bghgu.iptime.org:9303/user/update',
+            url: 'http://192.168.0.62:9303/user/update',
             headers: {
               'Content-Type': 'application/json',
               'Authorization': $localstorage.getObject('token')

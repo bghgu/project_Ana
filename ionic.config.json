@@ -2,5 +2,6 @@
   "name": "project_Ana",
   "app_id": "",
   "email": "ektmf1993@gmail.com",
-  "package_name": "com.skhu.sw"
+  "package_name": "com.skhu.sw",
+  "type": "ionic1"
 }

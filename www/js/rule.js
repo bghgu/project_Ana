@@ -6,7 +6,8 @@ angular.module('starter')
     if ($localstorage.getObject('token')) {
       $http({
           method: 'get',
-          url: 'http://bghgu.iptime.org:9303/rule/read',
+          //url: 'http://bghgu.iptime.org:9303/rule/read',
+          url: 'http://192.168.0.62:9303/rule/read',
           headers: {
             'Content-Type': 'application/json',
             'Authorization': $localstorage.getObject('token')

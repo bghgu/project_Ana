@@ -10,6 +10,8 @@
 
 맡은 역할 : PM, 메인 프론트 엔드 (앱) 개발, 문서 작성, 발표
 
+[성공회대학교 동문관리 시스템 작품제안서](https://github.com/bghgu/project_alumni_association/blob/master/%EC%84%B1%EA%B3%B5%ED%9A%8C%EB%8C%80%ED%95%99%EA%B5%90%20%EB%8F%99%EB%AC%B8%EA%B4%80%EB%A6%AC%EC%8B%9C%EC%8A%A4%ED%85%9C_%EC%9E%91%ED%92%88%EC%A0%9C%EC%95%88%EC%84%9C.pdf) - 작품 제안서
+
 사용 기술 : IONIC framework1, Angular.js1
 
 ## 구성
@@ -124,7 +126,7 @@
 
 ## 수상
 
-- 2017년 제 7회 성공회대학교 IT 경진대회 은상
+- 2017년 제 9회 소프트웨어공학과 지정 주제 부분 2위
 
 ---
 

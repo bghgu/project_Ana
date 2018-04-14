@@ -1,5 +1,7 @@
 # project_Skhu_Alumni_Association
 
+![logo.png](https://github.com/bghgu/project_alumni_association/blob/master/image/logo.png)
+
 성공회대학교 총 동문회 시스템 개발 프로젝트
 
  IONIC framework1와 Angular.js1을 사용한 하이브리드 앱 개발
@@ -8,7 +10,22 @@
 
 맡은 역할 : PM, 메인 프론트 엔드 (앱) 개발, 문서 작성, 발표
 
+사용 기술 : IONIC framework1, Angular.js1
 
+## 구성
+
+![1.jpg](https://github.com/bghgu/project_alumni_association/blob/master/image/1.jpg)
+
+전체 시스템 구성도
+
+
+
+![2.jpg](https://github.com/bghgu/project_alumni_association/blob/master/image/2.jpg)
+
+앱 서비스 구성도
+
+* 로그인  서비스중, jwt 서비스로 부터 JWT 토큰값을 받아온다.
+* 나머지 api 통신시 jwt 값을 헤더의 authorization에 넣어서 보낸다.
 
 ## 실행 방법
 
@@ -103,8 +120,11 @@
 
 ## 감사 인사
 
-- 영감
-- etc (등)
+- 아이오닉 인 액션 - 제래미 윌켄 지음 - 에이콘 출판사
+
+## 수상
+
+- 2017년 제 7회 성공회대학교 IT 경진대회 은상
 
 ---
 

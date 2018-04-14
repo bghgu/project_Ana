@@ -85,7 +85,7 @@
 - optimize zipalign
 
 ```bash
-  zipalign -v 4 android-release-unsigned.apk foressst.apk
+  zipalign -v 4 android-release-unsigned.apk skhuAlumni.apk
 ```
 
 ### ios build

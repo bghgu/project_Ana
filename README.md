@@ -18,13 +18,13 @@
 
 전체 시스템 구성도
 
-
+앱 서버와, 웹 서버로 구분된다.
 
 ![2.jpg](https://github.com/bghgu/project_alumni_association/blob/master/image/2.jpg)
 
 앱 서비스 구성도
 
-* 로그인  서비스중, jwt 서비스로 부터 JWT 토큰값을 받아온다.
+* 로그인  성공시, jwt 서비스로 부터 JWT 토큰값을 받아온다.
 * 나머지 api 통신시 jwt 값을 헤더의 authorization에 넣어서 보낸다.
 
 ## 실행 방법
